@@ -9,19 +9,19 @@ const testimonials = [
     quote:
       "Nobori exceeded every expectation. The attention to detail and the calm, professional atmosphere made my first tattoo experience unforgettable. I've already booked my second session.",
     author: "Sarah M.",
-    location: "California, USA",
+    image: "/assets/1.jpeg",
   },
   {
     quote:
       "Joshua is an incredible artist. He took my vague idea and transformed it into something beyond what I imagined. The whole experience was comfortable and professional.",
     author: "Marcus T.",
-    location: "Toronto, Canada",
+    image: "/assets/2.jpeg",
   },
   {
     quote:
       "Best tattoo experience I've ever had. The studio is beautiful, the vibe is relaxed, and the artistry is top-notch. Worth traveling to Costa Rica for!",
     author: "Elena R.",
-    location: "Berlin, Germany",
+    image: "/assets/3.jpeg",
   },
 ];
 
@@ -63,14 +63,9 @@ export default function Testimonials() {
             </blockquote>
 
             <div className="flex items-end justify-between">
-              <div>
-                <p className="text-gold font-medium">
-                  {testimonials[currentIndex].author}
-                </p>
-                <p className="text-muted text-sm">
-                  {testimonials[currentIndex].location}
-                </p>
-              </div>
+              <p className="text-gold font-medium">
+                {testimonials[currentIndex].author}
+              </p>
 
               {/* Navigation Arrows */}
               <div className="flex gap-2">
@@ -95,8 +90,8 @@ export default function Testimonials() {
           {/* Featured Image */}
           <div className="relative aspect-square md:aspect-auto">
             <Image
-              src="/assets/nobori/testimonial-tattoo.svg"
-              alt="Fine line flower tattoo"
+              src={testimonials[currentIndex].image}
+              alt={`Tattoo by Nobori for ${testimonials[currentIndex].author}`}
               fill
               className="object-cover rounded-2xl"
               sizes="(max-width: 768px) 100vw, 50vw"

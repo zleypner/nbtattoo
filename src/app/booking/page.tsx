@@ -4,11 +4,10 @@ import { ExternalLink } from "lucide-react";
 export const metadata: Metadata = {
   title: "Book a Consultation | Nobori Tattoo",
   description:
-    "Book your tattoo consultation with Nobori Tattoo in Playas del Coco, Costa Rica. Fill out our quick form and we'll respond within 24-48 hours.",
+    "Book your tattoo consultation with Nobori Tattoo in Playas del Coco, Costa Rica. Connect with us on Instagram and we'll respond within 24-48 hours.",
 };
 
-// Replace with your actual Google Form URL
-const GOOGLE_FORM_URL = "PASTE_GOOGLE_FORM_URL_HERE";
+const INSTAGRAM_URL = "https://www.instagram.com/nobori.tattoo/";
 
 export default function BookingPage() {
   return (
@@ -24,28 +23,26 @@ export default function BookingPage() {
 
           {/* Subtext */}
           <p className="mt-8 text-foreground/90 text-lg leading-relaxed max-w-xl mx-auto">
-            To keep things simple, all booking requests are handled through a
-            short form. We&apos;ll get back to you within 24–48 hours to discuss
-            your design and availability.
+            Connect with us on Instagram to book your consultation. We&apos;ll get
+            back to you within 24–48 hours to discuss your design and availability.
           </p>
 
           {/* Primary CTA */}
           <div className="mt-12">
             <a
-              href={GOOGLE_FORM_URL}
+              href={INSTAGRAM_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-3 px-10 py-5 bg-burgundy hover:bg-burgundy-dark border border-gold/50 hover:border-gold text-foreground text-base tracking-[0.15em] rounded-lg transition-all duration-300"
             >
-              OPEN BOOKING FORM
+              OPEN INSTAGRAM
               <ExternalLink className="w-5 h-5" />
             </a>
           </div>
 
           {/* Helper Text */}
           <p className="mt-6 text-muted text-sm">
-            Takes 2–3 minutes. You can include reference links from Pinterest or
-            Instagram.
+            Send us a DM with your tattoo idea and we&apos;ll get back to you soon.
           </p>
 
           {/* Secondary Link (Text) */}
@@ -54,30 +51,13 @@ export default function BookingPage() {
               Link not working? Open it directly:
             </p>
             <a
-              href={GOOGLE_FORM_URL}
+              href={INSTAGRAM_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="text-gold hover:text-foreground transition-colors text-sm underline underline-offset-4"
             >
-              {GOOGLE_FORM_URL === "PASTE_GOOGLE_FORM_URL_HERE"
-                ? "Google Form Link"
-                : GOOGLE_FORM_URL}
+              @nobori.tattoo
             </a>
-          </div>
-
-          {/* WhatsApp Alternative */}
-          <div className="mt-8">
-            <p className="text-muted text-sm">
-              Prefer Instagram?{" "}
-              <a
-                href="https://www.instagram.com/nobori.tattoo/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gold hover:text-foreground transition-colors"
-              >
-                Message us @nobori.tattoo
-              </a>
-            </p>
           </div>
         </div>
       </section>

@@ -74,41 +74,48 @@ export default function ArtistsPage() {
 
               <div className="space-y-6 text-foreground/80 leading-relaxed">
                 <p>
-                  I picked up my first tattoo machine eight years ago, and from
-                  that moment, I knew this was my path. Born in Costa
+                  I picked up my first tattoo machine six years ago, and from
+                  that moment I knew this was my path. Born in Costa
                   Rica&apos;s Central Valley in May 1997, I&apos;ve dedicated
                   myself to mastering this craft and building genuine
                   connections with every person who sits in my chair.
                 </p>
                 <p>
-                  For the last three years, I&apos;ve been working here in
-                  Playas del Coco, where I&apos;ve had the privilege of
-                  tattooing both locals and travelers from all over the world.
-                  What I love most isn&apos;t just the art—it&apos;s the
-                  relationships I build along the way.
+                  For the past three years, I&apos;ve been tattooing in Playas
+                  del Coco, working with both locals and travelers from all over
+                  the world. What I value most isn&apos;t only the art itself,
+                  but the relationships created along the way.
                 </p>
                 <p>
-                  To me, a tattoo is so much more than a design on skin.
-                  It&apos;s a personal moment, a story, a piece of who you are.
-                  That&apos;s why I focus on creating a respectful, comfortable,
-                  and intentional experience from our very first conversation to
-                  the final result. I genuinely enjoy connecting with people
-                  beyond the tattoo itself—whether that&apos;s through shared
-                  stories, great conversations, or recommending the best local
-                  food spots (I&apos;ve got a few favorites). And yes, I have a
-                  soft spot for cats, which usually comes up sooner or later.
+                  To me, a tattoo is much more than ink on skin. It&apos;s a
+                  personal moment — a story, a memory, a piece of who you are.
+                  That&apos;s why I focus on offering a respectful, comfortable,
+                  and intentional experience from our first conversation to the
+                  final result. I enjoy connecting beyond the tattoo itself,
+                  whether through meaningful conversations, shared stories, or
+                  recommending some of my favorite local food spots. And yes…
+                  I do have a soft spot for cats — it usually comes up sooner or
+                  later.
                 </p>
                 <p>
-                  My work centers on color illustrative tattooing, influenced by
-                  neo-oriental styles and refined fine-line techniques. I&apos;m
-                  intentional with every piece, paying close attention to
-                  balance, detail, and how the tattoo will age over time.
+                  My work centers around color illustrative tattooing, influenced
+                  by neo-oriental styles and refined fine-line techniques. Every
+                  piece is approached with intention, balance, and attention to
+                  detail, always considering how the tattoo will age and live
+                  with you over time.
                 </p>
                 <p>
-                  I offer a tattoo experience that feels different by
-                  design—where art, comfort, and meaning come together. My goal
-                  is that you leave not only with a tattoo you love, but with an
-                  experience you&apos;ll remember.
+                  I named my studio Nobori inspired by the traditional Japanese
+                  koinobori — windsocks shaped like koi fish that symbolize
+                  strength, perseverance, and the courage to swim upstream. The
+                  name reflects the spirit behind my work and my journey; moving
+                  from a place of resilience and meaning. Always having fun (:
+                </p>
+                <p>
+                  I offer a tattoo experience designed to feel different, where
+                  art, comfort, and meaning come together. My goal is that you
+                  leave not only with a tattoo you love, but with an experience
+                  you&apos;ll always remember.
                 </p>
               </div>
 

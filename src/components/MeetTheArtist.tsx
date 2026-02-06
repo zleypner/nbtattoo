@@ -40,12 +40,23 @@ export default function MeetTheArtist() {
             <p className="text-gold text-sm mb-6">
               Color Illustrative &bull; Neo-Oriental &bull; Fine Line
             </p>
-            <p className="text-foreground/80 leading-relaxed mb-6">
-              With 8 years of experience and a deep passion for meaningful
-              connections, I create tattoos that are more than just
-              designs—they&apos;re personal moments you&apos;ll carry with you
-              forever.
-            </p>
+            <div className="text-foreground/80 leading-relaxed mb-6 space-y-4">
+              <p>
+                With six years of experience and a deep passion for painting and
+                tattooing, Joshua believes tattoos are personal experiences —
+                part of a ritual where a story is carefully placed onto the
+                skin.
+              </p>
+              <p>
+                Each piece is approached with intention, respect, and connection,
+                honoring the meaning behind every design and enjoying what
+                tattooing allows him to communicate through his art.
+              </p>
+              <p>
+                He feels grateful to be trusted with these moments and happy to
+                become part of each client&apos;s story.
+              </p>
+            </div>
 
             {/* Style Tags */}
             <div className="flex flex-wrap gap-3 mb-8">

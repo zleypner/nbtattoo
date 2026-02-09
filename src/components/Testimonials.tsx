@@ -7,21 +7,33 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 const testimonials = [
   {
     quote:
-      "Nobori exceeded every expectation. The attention to detail and the calm, professional atmosphere made my first tattoo experience unforgettable. I've already booked my second session.",
-    author: "Sarah M.",
+      "I have been coming to Coco from Los Angeles for years and haven't gotten any tattoos because I hadn't met an artist I liked (yet). During this trip, I met Josh (the owner of Nobori) and LOVED his tattoo style. I told him my idea and he was able to make something really beautiful. His prices were extremely reasonable considering his skill level and he was very professional throughout the entire experience. I will be going back to finish this tattoo and to get more. Thanks Josh!",
+    author: "Alix Breeden",
     image: "/assets/1.jpeg",
   },
   {
     quote:
-      "Joshua is an incredible artist. He took my vague idea and transformed it into something beyond what I imagined. The whole experience was comfortable and professional.",
-    author: "Marcus T.",
+      "I was slightly nervous. The experience was easy and I felt so comfortable. Can't wait to get my next tattoo! Thanks Josh. Xo",
+    author: "Kiki Berg",
     image: "/assets/2.jpeg",
   },
   {
     quote:
-      "Best tattoo experience I've ever had. The studio is beautiful, the vibe is relaxed, and the artistry is top-notch. Worth traveling to Costa Rica for!",
-    author: "Elena R.",
+      "Josh was a good host and great artist. If I'm in Costa Rica again, I'd definitely go back. Sus obras de arte están muy lindas y Josh fue muy profesional y atento. Muchas gracias para el tatuaje genial.",
+    author: "Veronica Thomas",
     image: "/assets/3.jpeg",
+  },
+  {
+    quote:
+      "I had a great experience getting my first colored tattoo at Nobori. I'm a dive instructor and I asked him for a very difficult sea creature called Harlequin Shrimp, and he did a fantastic job. He really enjoys tattooing with color and he is not afraid of difficult projects and designs. This shop is in a very convenient location near mainstreet. Great experience overall. Thanks Joshua.",
+    author: "David Berm",
+    image: "/assets/1.jpeg",
+  },
+  {
+    quote:
+      "I cannot recommend Josh enough! He is an amazing tattoo artist and just generally a wonderful human. His shop is super cute and clean and he is so welcoming and kind. Definitely a great choice for a tattoo artist if you're ever in Costa Rica!!",
+    author: "Chandel Thiemann",
+    image: "/assets/2.jpeg",
   },
 ];
 

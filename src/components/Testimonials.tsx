@@ -6,12 +6,12 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 const testimonials = [
   {
     quote:
-      "I have been coming to Coco from Los Angeles for years and haven't gotten any tattoos because I hadn't met an artist I liked (yet). During this trip, I met Josh (the owner of Nobori) and LOVED his tattoo style. I told him my idea and he was able to make something really beautiful. His prices were extremely reasonable considering his skill level and he was very professional throughout the entire experience. I will be going back to finish this tattoo and to get more. Thanks Josh!",
+      "I have been coming to Coco from Los Angeles for years and haven't gotten any tattoos because I hadn't met an artist I liked (yet). During this trip, I met Josh (the owner of Nobori) and LOVED his tattoo style. I told him my idea and he was able to make something really beautiful. We have another session because it is such a big piece, but I already love it. His prices were extremely reasonable considering his skill level and he was very professional throughout the entire experience. I will be going back to finish this tattoo and to get more. Thanks Josh!",
     author: "Alix Breeden",
   },
   {
     quote:
-      "I was slightly nervous. The experience was easy and I felt so comfortable. Can't wait to get my next tattoo! Thanks Josh. Xo",
+      "I was slightly nervous. The experience was easy and I felt so comfortable. Cant wait to get my next tattoo! Thanks Josh. Xo",
     author: "Kiki Berg",
   },
   {
@@ -21,7 +21,7 @@ const testimonials = [
   },
   {
     quote:
-      "I had a great experience getting my first colored tattoo at Nobori. I'm a dive instructor and I asked him for a very difficult sea creature called Harlequin Shrimp, and he did a fantastic job. He really enjoys tattooing with color and he is not afraid of difficult projects and designs. This shop is in a very convenient location near mainstreet. Great experience overall. Thanks Joshua.",
+      "I had a great experience getting my first colored tattoo at Nobori. I'm a dive instructor and I asked him for a very difficult sea creature called Harlequin Shrimp, and he did a fantastic job. He really enjoys tattooing with color and he is not afraid of difficult projects and designs. He also sells very nice foam soaps and special moisturizers for your tattoos, he plays great music while tattooing and he has some very nice beach shorts in stock. This shop is in a very convenient location near mainstreet. Great experience overall. Thanks Joshua.",
     author: "David Berm",
   },
   {

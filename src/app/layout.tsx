@@ -4,11 +4,9 @@ import Script from "next/script";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import WhatsAppButton from "@/components/WhatsAppButton";
 import AnalyticsTracker from "@/components/analytics/AnalyticsTracker";
 import { GA_MEASUREMENT_ID } from "@/lib/ga";
 import { getHomePageSchemas } from "@/lib/schemas";
-import { siteConfig, businessInfo } from "@/lib/seo-config";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -180,7 +178,6 @@ export default function RootLayout({
         <Navbar />
         <main>{children}</main>
         <Footer />
-        <WhatsAppButton />
       </body>
     </html>
   );

@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { Clock, MapPin, Phone, Instagram, MessageCircle } from "lucide-react";
-import { businessInfo, socialLinks, getWhatsAppLink } from "@/lib/seo-config";
+import { Clock, MapPin, Phone, Instagram } from "lucide-react";
+import { businessInfo, socialLinks } from "@/lib/seo-config";
 
 export default function Footer() {
   return (
@@ -63,26 +63,15 @@ export default function Footer() {
               </h3>
             </div>
             <div className="flex flex-col gap-3">
-              <div className="flex gap-3">
-                <a
-                  href={getWhatsAppLink("Hi! I'm interested in booking a tattoo.")}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Contact us on WhatsApp"
-                  className="w-fit p-3 bg-[#25D366] hover:bg-[#128C7E] text-white rounded-lg transition-colors"
-                >
-                  <MessageCircle className="w-6 h-6" />
-                </a>
-                <a
-                  href={socialLinks.instagram}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Follow us on Instagram"
-                  className="w-fit p-3 border border-foreground/30 rounded-lg hover:border-gold hover:text-gold transition-colors"
-                >
-                  <Instagram className="w-6 h-6" />
-                </a>
-              </div>
+              <a
+                href={socialLinks.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Follow us on Instagram"
+                className="w-fit p-3 border border-foreground/30 rounded-lg hover:border-gold hover:text-gold transition-colors"
+              >
+                <Instagram className="w-6 h-6" />
+              </a>
               <Link
                 href="/booking"
                 className="inline-flex items-center justify-center px-6 py-3 border border-gold/50 hover:border-gold text-foreground hover:text-gold text-sm tracking-[0.15em] rounded-lg transition-all duration-300 w-fit"

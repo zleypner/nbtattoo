@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 import { ExternalLink } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Reservar Cita | Tatuajes en Playas del Coco, Guanacaste",
+  title: "Book Your Tattoo | Consultation in Playas del Coco, Costa Rica",
   description:
-    "Agenda tu cita para tatuaje en Nobori Tattoo, Playas del Coco, Guanacaste, Costa Rica. Contáctanos por Instagram. Book your tattoo consultation today.",
-  keywords: ["reservar tatuaje", "cita tattoo Costa Rica", "agendar tatuaje Guanacaste", "book tattoo Playas del Coco"],
+    "Book your tattoo consultation at Nobori Tattoo in Playas del Coco, Guanacaste, Costa Rica. Contact us via Instagram. Walk-ins welcome. Response within 24-48 hours.",
+  keywords: ["book tattoo Costa Rica", "tattoo appointment Guanacaste", "tattoo consultation Playas del Coco", "walk-in tattoo Costa Rica"],
   openGraph: {
-    title: "Reservar Cita | Nobori Tattoo",
-    description: "Agenda tu consulta para tatuaje en Playas del Coco, Guanacaste.",
+    title: "Book Your Tattoo | Nobori Tattoo Costa Rica",
+    description: "Schedule your tattoo consultation in Playas del Coco, Guanacaste. Walk-ins welcome.",
   },
 };
 

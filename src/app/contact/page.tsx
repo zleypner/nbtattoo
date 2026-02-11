@@ -3,13 +3,13 @@ import type { Metadata } from "next";
 import { MapPin, Clock, Instagram, MessageCircle } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Contacto | Tattoo Studio Playas del Coco, Guanacaste",
+  title: "Contact & Location | Tattoo Studio Playas del Coco, Guanacaste",
   description:
-    "Contáctanos en Nobori Tattoo, Playas del Coco, Guanacaste, Costa Rica. Ubicación en Plaza Nino frente a THE GYM. Horario, dirección y cómo llegar. Contact our tattoo studio.",
-  keywords: ["contacto tattoo", "tatuajes Playas del Coco", "tattoo Guanacaste", "estudio tatuajes Costa Rica"],
+    "Visit Nobori Tattoo in Playas del Coco, Guanacaste, Costa Rica. Located at Plaza Nino across from THE GYM. Open Mon-Sat. Near Liberia airport, Tamarindo, and Papagayo.",
+  keywords: ["tattoo location Guanacaste", "tattoo shop Playas del Coco", "Costa Rica tattoo address", "tattoo near Liberia airport"],
   openGraph: {
-    title: "Contacto | Nobori Tattoo - Playas del Coco",
-    description: "Visítanos en Playas del Coco, Guanacaste. Plaza Nino, Local 2.",
+    title: "Contact | Nobori Tattoo - Playas del Coco, Costa Rica",
+    description: "Visit us in Playas del Coco, Guanacaste. Plaza Nino, Local 2. Walk-ins welcome.",
   },
 };
 

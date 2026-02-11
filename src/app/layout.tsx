@@ -13,12 +13,27 @@ import { siteConfig, businessInfo } from "@/lib/seo-config";
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
+  display: "swap",
+  preload: true,
 });
 
+// Critical font for hero - only weight 300 for fastest LCP
+const cormorantHero = Cormorant_Garamond({
+  variable: "--font-cormorant-hero",
+  subsets: ["latin"],
+  weight: ["300"],
+  display: "swap",
+  preload: true,
+  adjustFontFallback: true,
+});
+
+// Full font for body content - loaded after hero
 const cormorant = Cormorant_Garamond({
   variable: "--font-cormorant",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
+  display: "swap",
+  preload: false, // Don't preload all weights
 });
 
 export const metadata: Metadata = {
@@ -150,7 +165,7 @@ export default function RootLayout({
           />
         ))}
       </head>
-      <body className={`${inter.variable} ${cormorant.variable} antialiased`}>
+      <body className={`${inter.variable} ${cormorantHero.variable} ${cormorant.variable} antialiased`}>
         <AnalyticsTracker />
         <Navbar />
         <main>{children}</main>

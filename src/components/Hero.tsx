@@ -4,24 +4,26 @@ import Link from "next/link";
 export default function Hero() {
   return (
     <section className="relative h-screen min-h-[600px] flex items-center justify-center">
-      {/* Background Image */}
+      {/* Background Image - priority for LCP */}
       <div className="absolute inset-0 z-0">
         <Image
           src="/assets/111.jpeg"
-          alt="Tattoo artist at work"
+          alt="Tattoo artist at work in Playas del Coco, Costa Rica"
           fill
           className="object-cover"
           priority
           sizes="100vw"
+          fetchPriority="high"
+          loading="eager"
         />
         {/* Dark Overlay Gradient */}
         <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/40 to-background/80" />
       </div>
 
-      {/* Hero Content */}
+      {/* Hero Content - Use preloaded hero font for fastest render */}
       <div className="relative z-10 text-center px-4">
-        {/* Main Title */}
-        <h1 className="font-[family-name:var(--font-cormorant)] font-light">
+        {/* Main Title - Using optimized hero font (weight 300 only, preloaded) */}
+        <h1 className="font-[family-name:var(--font-cormorant-hero)] font-light">
           <span className="block text-6xl sm:text-7xl md:text-8xl lg:text-9xl tracking-[0.3em] mb-2">
             NOBORI
           </span>

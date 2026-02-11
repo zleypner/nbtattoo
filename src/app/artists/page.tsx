@@ -3,9 +3,14 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Artists | Nobori Tattoo",
+  title: "Joshua - Tatuador en Playas del Coco, Guanacaste",
   description:
-    "Meet Joshua, the founder and artist behind Nobori Tattoo. Specializing in color illustrative, neo-oriental, and fine line tattoos.",
+    "Conoce a Joshua, fundador y artista de Nobori Tattoo en Playas del Coco, Guanacaste, Costa Rica. Especializado en color illustrative, neo-oriental y fine line tattoos. 6 años de experiencia.",
+  keywords: ["tatuador Costa Rica", "Joshua tattoo", "artista tatuajes Guanacaste", "tattoo artist Playas del Coco"],
+  openGraph: {
+    title: "Joshua - Tatuador | Nobori Tattoo",
+    description: "Artista de tatuajes en Playas del Coco, Guanacaste con 6 años de experiencia.",
+  },
 };
 
 export default function ArtistsPage() {

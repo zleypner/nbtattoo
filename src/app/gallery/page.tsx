@@ -3,9 +3,14 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Gallery | Nobori Tattoo",
+  title: "Galería de Tatuajes | Trabajos en Guanacaste, Costa Rica",
   description:
-    "Browse our tattoo gallery featuring color illustrative, neo-oriental, and fine line tattoo work by Joshua at Nobori Tattoo.",
+    "Galería de tatuajes de Nobori Tattoo en Playas del Coco, Guanacaste. Color illustrative, neo-oriental y fine line tattoos. Ver portfolio y trabajos realizados.",
+  keywords: ["galería tatuajes", "portfolio tattoo Costa Rica", "tatuajes Guanacaste", "diseños tatuajes Playas del Coco"],
+  openGraph: {
+    title: "Galería | Nobori Tattoo - Playas del Coco",
+    description: "Portfolio de tatuajes realizados en nuestro estudio en Guanacaste, Costa Rica.",
+  },
 };
 
 const galleryImages = [

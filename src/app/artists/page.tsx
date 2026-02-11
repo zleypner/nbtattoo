@@ -1,23 +1,74 @@
 import Image from "next/image";
 import Link from "next/link";
+import Script from "next/script";
 import type { Metadata } from "next";
+import { ChevronRight } from "lucide-react";
+import { getBreadcrumbSchema, getArtistSchema } from "@/lib/schemas";
 
 export const metadata: Metadata = {
   title: "Meet Joshua | Tattoo Artist in Playas del Coco, Costa Rica",
   description:
     "Meet Joshua, founder and artist at Nobori Tattoo in Playas del Coco, Guanacaste, Costa Rica. 6 years experience in color illustrative, neo-oriental, and fine line tattoos.",
-  keywords: ["tattoo artist Costa Rica", "Joshua tattoo artist", "best tattoo artist Guanacaste", "professional tattoo Playas del Coco"],
+  keywords: [
+    "tattoo artist Costa Rica",
+    "Joshua tattoo artist",
+    "best tattoo artist Guanacaste",
+    "professional tattoo Playas del Coco",
+    "tattoo artist near me",
+    "Coco Beach tattoo artist",
+  ],
+  alternates: {
+    canonical: "/artists",
+  },
   openGraph: {
     title: "Joshua | Tattoo Artist at Nobori Tattoo Costa Rica",
-    description: "Professional tattoo artist in Playas del Coco, Guanacaste with 6 years of experience.",
+    description:
+      "Professional tattoo artist in Playas del Coco, Guanacaste with 6 years of experience in color illustrative, neo-oriental & fine line tattoos.",
+    url: "https://noboritattoo.com/artists",
   },
 };
 
+const breadcrumbSchema = getBreadcrumbSchema([
+  { name: "Home", url: "/" },
+  { name: "Artists", url: "/artists" },
+]);
+const artistSchema = getArtistSchema();
+
 export default function ArtistsPage() {
   return (
-    <div className="pt-20">
-      {/* Artist Profile Section */}
-      <section className="py-16 lg:py-24">
+    <>
+      {/* Structured Data */}
+      <Script
+        id="breadcrumb-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema),
+        }}
+      />
+      <Script
+        id="artist-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(artistSchema),
+        }}
+      />
+
+      <div className="pt-20">
+        {/* Breadcrumb Navigation */}
+        <nav aria-label="Breadcrumb" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+          <ol className="flex items-center gap-2 text-sm text-muted">
+            <li>
+              <Link href="/" className="hover:text-gold transition-colors">
+                Home
+              </Link>
+            </li>
+            <ChevronRight className="w-4 h-4" />
+            <li className="text-gold">Artists</li>
+          </ol>
+        </nav>
+
+        {/* Artist Profile Section */}
+        <section className="py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
             {/* Artist Images */}
@@ -137,17 +188,45 @@ export default function ArtistsPage() {
                 </span>
               </div>
 
-              {/* CTA */}
-              <Link
-                href="/booking"
-                className="inline-block px-8 py-4 bg-burgundy hover:bg-burgundy-dark border border-burgundy hover:border-gold text-foreground text-sm tracking-[0.15em] rounded-lg transition-all duration-300"
-              >
-                BOOK WITH JOSHUA
-              </Link>
+              {/* CTAs */}
+              <div className="flex flex-wrap gap-4">
+                <Link
+                  href="/booking"
+                  className="inline-block px-8 py-4 bg-burgundy hover:bg-burgundy-dark border border-burgundy hover:border-gold text-foreground text-sm tracking-[0.15em] rounded-lg transition-all duration-300"
+                >
+                  BOOK WITH JOSHUA
+                </Link>
+                <Link
+                  href="/gallery"
+                  className="inline-block px-8 py-4 border border-gold/50 hover:border-gold text-foreground hover:text-gold text-sm tracking-[0.15em] rounded-lg transition-all duration-300"
+                >
+                  VIEW PORTFOLIO
+                </Link>
+              </div>
+
+              {/* Internal Links */}
+              <div className="mt-10 pt-8 border-t border-charcoal">
+                <p className="text-muted text-sm mb-4">More about our studio:</p>
+                <div className="flex flex-wrap gap-4 text-sm">
+                  <Link
+                    href="/playas-del-coco"
+                    className="text-gold hover:text-foreground transition-colors"
+                  >
+                    Tattoo in Playas del Coco &rarr;
+                  </Link>
+                  <Link
+                    href="/contact"
+                    className="text-gold hover:text-foreground transition-colors"
+                  >
+                    Visit Our Studio &rarr;
+                  </Link>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 }

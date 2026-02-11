@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { Clock, MapPin, Phone, Instagram } from "lucide-react";
+import { Clock, MapPin, Phone, Instagram, MessageCircle } from "lucide-react";
+import { businessInfo, socialLinks, getWhatsAppLink } from "@/lib/seo-config";
 
 export default function Footer() {
   return (
@@ -16,9 +17,9 @@ export default function Footer() {
               </h3>
             </div>
             <div className="space-y-2 text-foreground/90">
-              <p>Monday - Friday: 10am - 7pm</p>
-              <p>Saturday: 11am - 6pm</p>
-              <p>Sunday: By Appointment</p>
+              <p>{businessInfo.hoursDisplay.weekdays}</p>
+              <p>{businessInfo.hoursDisplay.saturday}</p>
+              <p>{businessInfo.hoursDisplay.sunday}</p>
             </div>
           </div>
 
@@ -31,18 +32,26 @@ export default function Footer() {
               </h3>
             </div>
             <div className="space-y-2 text-foreground/90">
-              <p>Plaza Nino, Local 2</p>
-              <p>Playas del Coco</p>
-              <p>Guanacaste, Costa Rica</p>
+              <p>{businessInfo.address.street.split(",")[0]}</p>
+              <p>{businessInfo.address.locality}</p>
+              <p>{businessInfo.address.region}, {businessInfo.address.country}</p>
             </div>
-            <a
-              href="https://maps.app.goo.gl/BpX3RNAoCWV7Fbok7"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 mt-4 text-gold hover:text-foreground transition-colors text-sm"
-            >
-              Get Directions &rarr;
-            </a>
+            <div className="flex flex-col gap-2 mt-4">
+              <a
+                href={socialLinks.googleMaps}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-gold hover:text-foreground transition-colors text-sm"
+              >
+                Get Directions &rarr;
+              </a>
+              <Link
+                href="/playas-del-coco"
+                className="inline-flex items-center gap-2 text-gold/70 hover:text-foreground transition-colors text-sm"
+              >
+                Learn about our studio &rarr;
+              </Link>
+            </div>
           </div>
 
           {/* Connect */}
@@ -53,16 +62,27 @@ export default function Footer() {
                 CONNECT
               </h3>
             </div>
-            <div className="flex flex-col gap-4">
-              <a
-                href="https://www.instagram.com/nobori.tattoo/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Follow us on Instagram"
-                className="w-fit p-3 border border-foreground/30 rounded-lg hover:border-gold hover:text-gold transition-colors"
-              >
-                <Instagram className="w-6 h-6" />
-              </a>
+            <div className="flex flex-col gap-3">
+              <div className="flex gap-3">
+                <a
+                  href={getWhatsAppLink("Hi! I'm interested in booking a tattoo.")}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Contact us on WhatsApp"
+                  className="w-fit p-3 bg-[#25D366] hover:bg-[#128C7E] text-white rounded-lg transition-colors"
+                >
+                  <MessageCircle className="w-6 h-6" />
+                </a>
+                <a
+                  href={socialLinks.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Follow us on Instagram"
+                  className="w-fit p-3 border border-foreground/30 rounded-lg hover:border-gold hover:text-gold transition-colors"
+                >
+                  <Instagram className="w-6 h-6" />
+                </a>
+              </div>
               <Link
                 href="/booking"
                 className="inline-flex items-center justify-center px-6 py-3 border border-gold/50 hover:border-gold text-foreground hover:text-gold text-sm tracking-[0.15em] rounded-lg transition-all duration-300 w-fit"
@@ -70,6 +90,27 @@ export default function Footer() {
                 BOOK NOW
               </Link>
             </div>
+          </div>
+        </div>
+
+        {/* Quick Links */}
+        <div className="mt-12 pt-8 border-t border-foreground/10">
+          <div className="flex flex-wrap justify-center gap-6 text-sm text-foreground/70">
+            <Link href="/gallery" className="hover:text-gold transition-colors">
+              Gallery
+            </Link>
+            <Link href="/artists" className="hover:text-gold transition-colors">
+              Meet the Artist
+            </Link>
+            <Link href="/playas-del-coco" className="hover:text-gold transition-colors">
+              Tattoo in Playas del Coco
+            </Link>
+            <Link href="/contact" className="hover:text-gold transition-colors">
+              Contact & Location
+            </Link>
+            <Link href="/booking" className="hover:text-gold transition-colors">
+              Book Now
+            </Link>
           </div>
         </div>
       </div>

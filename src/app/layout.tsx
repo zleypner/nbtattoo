@@ -4,8 +4,11 @@ import Script from "next/script";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import WhatsAppButton from "@/components/WhatsAppButton";
 import AnalyticsTracker from "@/components/analytics/AnalyticsTracker";
 import { GA_MEASUREMENT_ID } from "@/lib/ga";
+import { getHomePageSchemas } from "@/lib/schemas";
+import { siteConfig, businessInfo } from "@/lib/seo-config";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -26,15 +29,18 @@ export const metadata: Metadata = {
   description:
     "Professional tattoo studio in Playas del Coco, Guanacaste, Costa Rica. Specializing in color illustrative, neo-oriental, and fine line tattoos. Get inked on your Costa Rica vacation. Walk-ins welcome.",
   keywords: [
+    // English keywords
     "tattoo Costa Rica",
     "tattoo Guanacaste",
     "tattoo Playas del Coco",
+    "tattoo artist Playas del Coco",
     "best tattoo artist Costa Rica",
     "tattoo shop near me",
     "Costa Rica vacation tattoo",
     "beach tattoo",
     "Coco Beach tattoo",
     "tattoo studio Guanacaste",
+    "tattoo studio Playas del Coco",
     "color illustrative tattoo",
     "neo-oriental tattoo",
     "fine line tattoo",
@@ -46,9 +52,13 @@ export const metadata: Metadata = {
     "custom tattoo design",
     "tattoo while traveling",
     "tattoo shop Costa Rica",
-    "ink Costa Rica",
+    // Spanish keywords for local SEO
     "tatuajes Costa Rica",
     "tatuajes Guanacaste",
+    "tatuajes Playas del Coco",
+    "tatuador Playas del Coco",
+    "estudio de tatuajes Costa Rica",
+    "mejor tatuador Costa Rica",
   ],
   authors: [{ name: "Nobori Tattoo" }],
   creator: "Nobori Tattoo",
@@ -60,7 +70,8 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    alternateLocale: "es_CR",
+    // Note: No alternateLocale since site is primarily English
+    // Spanish keywords are included for local SEO but no Spanish pages exist
     url: "https://noboritattoo.com",
     siteName: "Nobori Tattoo",
     title: "Nobori Tattoo | Best Tattoo Studio in Guanacaste, Costa Rica",
@@ -94,10 +105,14 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: "your-google-verification-code",
+    // TODO: Replace with actual Google Search Console verification code
+    google: process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION || "your-google-verification-code",
   },
   category: "Tattoo Studio",
 };
+
+// Pre-generate schemas for SSR
+const homePageSchemas = getHomePageSchemas();
 
 export default function RootLayout({
   children,
@@ -123,67 +138,24 @@ export default function RootLayout({
             </Script>
           </>
         )}
-        <Script
-          id="local-business-schema"
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "TattooParlor",
-              name: "Nobori Tattoo",
-              image: "https://noboritattoo.com/assets/og-image.jpg",
-              "@id": "https://noboritattoo.com",
-              url: "https://noboritattoo.com",
-              telephone: "",
-              address: {
-                "@type": "PostalAddress",
-                streetAddress: "Plaza Nino, Local 2, Frente a THE GYM",
-                addressLocality: "Playas del Coco",
-                addressRegion: "Guanacaste",
-                postalCode: "50503",
-                addressCountry: "CR",
-              },
-              geo: {
-                "@type": "GeoCoordinates",
-                latitude: 10.5482,
-                longitude: -85.7027,
-              },
-              openingHoursSpecification: [
-                {
-                  "@type": "OpeningHoursSpecification",
-                  dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-                  opens: "10:00",
-                  closes: "19:00",
-                },
-                {
-                  "@type": "OpeningHoursSpecification",
-                  dayOfWeek: "Saturday",
-                  opens: "11:00",
-                  closes: "18:00",
-                },
-              ],
-              sameAs: ["https://www.instagram.com/nobori.tattoo/"],
-              priceRange: "$$",
-              description:
-                "Professional tattoo studio in Playas del Coco, Guanacaste, Costa Rica. Specializing in color illustrative, neo-oriental and fine line tattoos. Walk-ins welcome.",
-              areaServed: [
-                "Playas del Coco",
-                "Guanacaste",
-                "Liberia",
-                "Tamarindo",
-                "Papagayo",
-                "Costa Rica",
-              ],
-              knowsLanguage: ["es", "en"],
-            }),
-          }}
-        />
+        {/* Structured Data - Multiple Schemas for Rich Results */}
+        {homePageSchemas.map((schema, index) => (
+          <Script
+            key={`schema-${index}`}
+            id={`schema-${index}`}
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify(schema),
+            }}
+          />
+        ))}
       </head>
       <body className={`${inter.variable} ${cormorant.variable} antialiased`}>
         <AnalyticsTracker />
         <Navbar />
         <main>{children}</main>
         <Footer />
+        <WhatsAppButton />
       </body>
     </html>
   );

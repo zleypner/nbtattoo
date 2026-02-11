@@ -1,31 +1,82 @@
 import Link from "next/link";
+import Script from "next/script";
 import type { Metadata } from "next";
-import { MapPin, Clock, Instagram, MessageCircle } from "lucide-react";
+import { MapPin, Clock, Instagram, MessageCircle, ChevronRight, Phone } from "lucide-react";
+import { businessInfo, socialLinks, getWhatsAppLink, getPhoneLink } from "@/lib/seo-config";
+import { getBreadcrumbSchema, getLocalBusinessSchema } from "@/lib/schemas";
 
 export const metadata: Metadata = {
   title: "Contact & Location | Tattoo Studio Playas del Coco, Guanacaste",
   description:
-    "Visit Nobori Tattoo in Playas del Coco, Guanacaste, Costa Rica. Located at Plaza Nino across from THE GYM. Open Mon-Sat. Near Liberia airport, Tamarindo, and Papagayo.",
-  keywords: ["tattoo location Guanacaste", "tattoo shop Playas del Coco", "Costa Rica tattoo address", "tattoo near Liberia airport"],
+    "Visit Nobori Tattoo in Playas del Coco, Guanacaste, Costa Rica. Located at Plaza Nino across from THE GYM. Open Mon-Sat. 30 min from Liberia airport, Tamarindo, and Papagayo.",
+  keywords: [
+    "tattoo location Guanacaste",
+    "tattoo shop Playas del Coco",
+    "Costa Rica tattoo address",
+    "tattoo near Liberia airport",
+    "Nobori Tattoo location",
+    "tattoo studio hours Costa Rica",
+  ],
+  alternates: {
+    canonical: "/contact",
+  },
   openGraph: {
     title: "Contact | Nobori Tattoo - Playas del Coco, Costa Rica",
-    description: "Visit us in Playas del Coco, Guanacaste. Plaza Nino, Local 2. Walk-ins welcome.",
+    description:
+      "Visit us in Playas del Coco, Guanacaste. Plaza Nino, Local 2. Walk-ins welcome.",
+    url: "https://noboritattoo.com/contact",
   },
 };
 
+const breadcrumbSchema = getBreadcrumbSchema([
+  { name: "Home", url: "/" },
+  { name: "Contact", url: "/contact" },
+]);
+const localBusinessSchema = getLocalBusinessSchema();
+
 export default function ContactPage() {
   return (
-    <div className="pt-20">
-      {/* Page Header */}
-      <section className="py-16 text-center">
-        <h1 className="font-[family-name:var(--font-cormorant)] text-4xl sm:text-5xl md:text-6xl tracking-[0.2em] text-foreground">
-          CONTACT
-        </h1>
-        <div className="w-16 h-0.5 bg-gold mx-auto mt-6" />
-        <p className="mt-6 text-muted max-w-2xl mx-auto px-4">
-          Ready to start your tattoo journey? Get in touch with us.
-        </p>
-      </section>
+    <>
+      {/* Structured Data */}
+      <Script
+        id="breadcrumb-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema),
+        }}
+      />
+      <Script
+        id="local-business-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(localBusinessSchema),
+        }}
+      />
+
+      <div className="pt-20">
+        {/* Breadcrumb Navigation */}
+        <nav aria-label="Breadcrumb" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+          <ol className="flex items-center gap-2 text-sm text-muted">
+            <li>
+              <Link href="/" className="hover:text-gold transition-colors">
+                Home
+              </Link>
+            </li>
+            <ChevronRight className="w-4 h-4" />
+            <li className="text-gold">Contact</li>
+          </ol>
+        </nav>
+
+        {/* Page Header */}
+        <section className="py-16 text-center">
+          <h1 className="font-[family-name:var(--font-cormorant)] text-4xl sm:text-5xl md:text-6xl tracking-[0.2em] text-foreground">
+            CONTACT & LOCATION
+          </h1>
+          <div className="w-16 h-0.5 bg-gold mx-auto mt-6" />
+          <p className="mt-6 text-muted max-w-2xl mx-auto px-4">
+            Visit our tattoo studio in Playas del Coco, Guanacaste, Costa Rica.
+          </p>
+        </section>
 
       {/* Contact Grid */}
       <section className="pb-24">
@@ -88,20 +139,41 @@ export default function ContactPage() {
                   </h2>
                 </div>
                 <p className="text-foreground/90 mb-6">
-                  Follow us on Instagram to see our latest work and reach out
-                  via DM for inquiries.
+                  Reach us on WhatsApp for the fastest response, or connect via Instagram.
                 </p>
-                <a
-                  href="https://www.instagram.com/nobori.tattoo/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-3 px-6 py-3 border border-foreground/30 hover:border-gold text-foreground hover:text-gold rounded-lg transition-all duration-300"
-                >
-                  <Instagram className="w-5 h-5" />
-                  <span className="text-sm tracking-[0.1em]">
-                    @NOBORI.TATTOO
-                  </span>
-                </a>
+                <div className="space-y-3">
+                  <a
+                    href={getWhatsAppLink("Hi! I'm interested in getting a tattoo at Nobori Tattoo.")}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 px-6 py-3 bg-[#25D366] hover:bg-[#128C7E] text-white rounded-lg transition-all duration-300"
+                  >
+                    <MessageCircle className="w-5 h-5" />
+                    <span className="text-sm tracking-[0.1em]">
+                      WHATSAPP US
+                    </span>
+                  </a>
+                  <a
+                    href={socialLinks.instagram}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 px-6 py-3 border border-foreground/30 hover:border-gold text-foreground hover:text-gold rounded-lg transition-all duration-300"
+                  >
+                    <Instagram className="w-5 h-5" />
+                    <span className="text-sm tracking-[0.1em]">
+                      {socialLinks.instagramHandle}
+                    </span>
+                  </a>
+                  <a
+                    href={getPhoneLink()}
+                    className="flex items-center gap-3 px-6 py-3 border border-foreground/30 hover:border-gold text-foreground hover:text-gold rounded-lg transition-all duration-300"
+                  >
+                    <Phone className="w-5 h-5" />
+                    <span className="text-sm tracking-[0.1em]">
+                      {businessInfo.phone}
+                    </span>
+                  </a>
+                </div>
               </div>
             </div>
 
@@ -132,15 +204,49 @@ export default function ContactPage() {
               Book your consultation today and let&apos;s bring your vision to
               life.
             </p>
-            <Link
-              href="/booking"
-              className="inline-block px-8 py-4 bg-burgundy hover:bg-burgundy-dark border border-burgundy hover:border-gold text-foreground text-sm tracking-[0.15em] rounded-lg transition-all duration-300"
-            >
-              BOOK A CONSULTATION
-            </Link>
+            <div className="flex flex-wrap justify-center gap-4">
+              <Link
+                href="/booking"
+                className="inline-block px-8 py-4 bg-burgundy hover:bg-burgundy-dark border border-burgundy hover:border-gold text-foreground text-sm tracking-[0.15em] rounded-lg transition-all duration-300"
+              >
+                BOOK A CONSULTATION
+              </Link>
+              <Link
+                href="/playas-del-coco"
+                className="inline-block px-8 py-4 border border-gold/50 hover:border-gold text-foreground hover:text-gold text-sm tracking-[0.15em] rounded-lg transition-all duration-300"
+              >
+                LEARN MORE ABOUT US
+              </Link>
+            </div>
+          </div>
+
+          {/* Internal Links */}
+          <div className="text-center mt-12">
+            <p className="text-muted text-sm mb-4">Explore more:</p>
+            <div className="flex flex-wrap justify-center gap-6 text-sm">
+              <Link
+                href="/gallery"
+                className="text-gold hover:text-foreground transition-colors"
+              >
+                View Gallery &rarr;
+              </Link>
+              <Link
+                href="/artists"
+                className="text-gold hover:text-foreground transition-colors"
+              >
+                Meet the Artist &rarr;
+              </Link>
+              <Link
+                href="/playas-del-coco"
+                className="text-gold hover:text-foreground transition-colors"
+              >
+                Tattoo in Playas del Coco &rarr;
+              </Link>
+            </div>
           </div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 }
